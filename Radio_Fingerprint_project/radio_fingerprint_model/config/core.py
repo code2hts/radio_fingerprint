@@ -40,10 +40,9 @@ class ModelConfig(BaseModel):
     training and feature engineering.
     """
 
-    target: str
-    features: List[str]
-    unused_fields: List[str]
-    
+    target: int
+    features: List[int]
+        
     date_var: str
     yr_var: str
     mnth_var: str
