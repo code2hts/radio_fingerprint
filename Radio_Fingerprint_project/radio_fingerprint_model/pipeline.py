@@ -8,7 +8,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 
-from bikeshare_model.config.core import config
+from radio_fingerprint_model.config.core import config
 from bikeshare_model.processing.features import WeekdayImputer, WeathersitImputer
 from bikeshare_model.processing.features import Mapper
 from bikeshare_model.processing.features import OutlierHandler, WeekdayOneHotEncoder
