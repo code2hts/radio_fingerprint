@@ -6,7 +6,7 @@ training_data_file: rf_measurements_2k_dataset.csv
 
 # Variables
 # The variable we are attempting to predict (cnt)
-target: cnt
+target: ServCellRSRQ
 
 pipeline_name: fingerprint_model
 pipeline_save_file: fingerprint__model_output_v
