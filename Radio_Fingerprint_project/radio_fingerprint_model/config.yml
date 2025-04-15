@@ -27,12 +27,12 @@ unused_fields:  # Features to drop before pipeline
 
 # Features names
 
-servCellID_var: dteday
-servCellRSRP_var: yr
-nbr1CellID_var: mnth
-nbr1RSRP_var: season
-nbr2CellID_var: hr
-nbr2RSRP_var: holiday
+servCellID_var:servingCellID
+servCellRSRP_var: ServingCellRSRP
+nbr1CellID_var: Nbr1CellID
+nbr1RSRP_var: Nbr1RSRP
+nbr2CellID_var: Nbr2CellID
+nbr2RSRP_var: Nbr2RSRP
 
 # Mappings for Ordinal categorical features
 
