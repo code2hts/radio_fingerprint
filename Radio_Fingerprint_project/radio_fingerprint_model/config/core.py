@@ -42,28 +42,22 @@ class ModelConfig(BaseModel):
 
     target: int
     features: List[int]
-        
-    date_var: str
-    yr_var: str
-    mnth_var: str
-    season_var: str
-    hr_var: str
-    holiday_var: str
-    workingday_var: str
-    weekday_var: str
-    weathersit_var: str
-    temp_var: str
-    atemp_var: str
-    hum_var: str
-    windspeed_var: str
-        
-    yr_mappings: Dict[int, int]
-    mnth_mappings: Dict[str, int]
-    season_mappings: Dict[str, int]
-    weathersit_mappings: Dict[str, int]
-    holiday_mappings: Dict[str, int]
-    workingday_mappings: Dict[str, int]
-    hr_mappings: Dict[str, int]
+
+    servCellID_var:servingCellID
+    servCellRSRP_var: ServingCellRSRP
+    nbr1CellID_var: Nbr1CellID
+    nbr1RSRP_var: Nbr1RSRP
+    nbr2CellID_var: Nbr2CellID
+    nbr2RSRP_var: Nbr2RSRP
+    
+       
+    #yr_mappings: Dict[int, int]
+    #mnth_mappings: Dict[str, int]
+    #season_mappings: Dict[str, int]
+    #weathersit_mappings: Dict[str, int]
+    #holiday_mappings: Dict[str, int]
+    #workingday_mappings: Dict[str, int]
+    #hr_mappings: Dict[str, int]
     
     test_size:float
     random_state: int
