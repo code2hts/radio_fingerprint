@@ -8,9 +8,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
-from bikeshare_model.config.core import config
-from bikeshare_model.pipeline import bikeshare_pipe
-from bikeshare_model.processing.data_manager import load_dataset, save_pipeline
+from radio_fingerprint_model.config.core import config
+from radio_fingerprint_model.pipeline import fingerprint_pipe
+from radio_fingerprint_model.processing.data_manager import load_dataset, save_pipeline
 
 def run_training() -> None:
     
@@ -31,15 +31,15 @@ def run_training() -> None:
     )
 
     # Pipeline fitting
-    bikeshare_pipe.fit(X_train, y_train)
-    y_pred = bikeshare_pipe.predict(X_test)
+    fingerprint_pipe.fit(X_train, y_train)
+    y_pred = fingerprint_pipe.predict(X_test)
 
     # Calculate the score/error
     print("R2 score:", round(r2_score(y_test, y_pred), 2))
     print("Mean squared error:", mean_squared_error(y_test, y_pred))
 
     # persist trained model
-    save_pipeline(pipeline_to_persist = bikeshare_pipe)
+    save_pipeline(pipeline_to_persist = fingerprint_pipe)
     
 if __name__ == "__main__":
     run_training()

@@ -9,15 +9,15 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 
 from radio_fingerprint_model.config.core import config
-from bikeshare_model.processing.features import WeekdayImputer, WeathersitImputer
-from bikeshare_model.processing.features import Mapper
-from bikeshare_model.processing.features import OutlierHandler, WeekdayOneHotEncoder
+#from bikeshare_model.processing.features import WeekdayImputer, WeathersitImputer
+#from bikeshare_model.processing.features import Mapper
+#from bikeshare_model.processing.features import OutlierHandler, WeekdayOneHotEncoder
 
-bikeshare_pipe = Pipeline([
+fingerprint_pipe = Pipeline([
 
     ######### Imputation ###########
     #('weekday_imputation', WeekdayImputer(variable = config.model_config_.weekday_var, 
-                                          date_var= config.model_config_.date_var)),
+                                        #  date_var= config.model_config_.date_var)),
     #('weathersit_imputation', WeathersitImputer(variable = config.model_config_.weathersit_var)),
     
     ######### Mapper ###########

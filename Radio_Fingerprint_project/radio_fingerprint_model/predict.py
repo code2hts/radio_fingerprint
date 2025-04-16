@@ -8,15 +8,15 @@ from typing import Union
 import pandas as pd
 import numpy as np
 
-from bikeshare_model import __version__ as _version
-from bikeshare_model.config.core import config
-from bikeshare_model.processing.data_manager import load_pipeline
-from bikeshare_model.processing.data_manager import pre_pipeline_preparation
-from bikeshare_model.processing.validation import validate_inputs
+from radio_fingerprint_model import __version__ as _version
+from radio_fingerprint_model.config.core import config
+from radio_fingerprint_model.processing.data_manager import load_pipeline
+#from radio_fingerprint_model.processing.data_manager import pre_pipeline_preparation
+from radio_fingerprint_model.processing.validation import validate_inputs
 
 
 pipeline_file_name = f"{config.app_config_.pipeline_save_file}{_version}.pkl"
-bikeshare_pipe = load_pipeline(file_name = pipeline_file_name)
+fingerprint_pipe = load_pipeline(file_name = pipeline_file_name)
 
 
 def make_prediction(*, input_data: Union[pd.DataFrame, dict]) -> dict:
@@ -31,7 +31,7 @@ def make_prediction(*, input_data: Union[pd.DataFrame, dict]) -> dict:
     results = {"predictions": None, "version": _version, "errors": errors}
       
     if not errors:
-        predictions = bikeshare_pipe.predict(validated_data)
+        predictions = radio_fingerprint_pipe.predict(validated_data)
         results = {"predictions": np.floor(predictions), "version": _version, "errors": errors}
         print(results)
 
@@ -41,7 +41,11 @@ def make_prediction(*, input_data: Union[pd.DataFrame, dict]) -> dict:
 
 if __name__ == "__main__":
 
-    data_in = {'dteday': ['2012-11-6'], 'season': ['winter'], 'hr': ['6pm'], 'holiday': ['No'], 'weekday': ['Tue'],
+    #data_in = {'dteday': ['2012-11-6'], 'season': ['winter'], 'hr': ['6pm'], 'holiday': ['No'], 'weekday': ['Tue'],
+     #          'workingday': ['Yes'], 'weathersit': ['Clear'], 'temp': [16], 'atemp': [17.5], 'hum': [30], 'windspeed': [10]}
+
+    data_in = {'': ['2012-11-6'], 'season': ['winter'], 'hr': ['6pm'], 'holiday': ['No'], 'weekday': ['Tue'],
                'workingday': ['Yes'], 'weathersit': ['Clear'], 'temp': [16], 'atemp': [17.5], 'hum': [30], 'windspeed': [10]}
+
 
     make_prediction(input_data = data_in)
