@@ -1,4 +1,4 @@
-,servingCellID,ServingCellRSRP,Nbr1CellID,Nbr1RSRP,Nbr2CellID,Nbr2RSRP,ServCellRSRQ
+servingCellID,ServingCellRSRP,Nbr1CellID,Nbr1RSRP,Nbr2CellID,Nbr2RSRP,ServCellRSRQ
 0,1,41,4,41,8,33,27
 1,1,49,4,38,2,35,32
 2,1,36,5,34,4,33,24

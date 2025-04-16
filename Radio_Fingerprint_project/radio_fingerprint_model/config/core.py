@@ -40,15 +40,15 @@ class ModelConfig(BaseModel):
     training and feature engineering.
     """
 
-    target: int
-    features: List[int]
+    target: str
+    features: List[str]
 
-    servCellID_var:servingCellID
-    servCellRSRP_var: ServingCellRSRP
-    nbr1CellID_var: Nbr1CellID
-    nbr1RSRP_var: Nbr1RSRP
-    nbr2CellID_var: Nbr2CellID
-    nbr2RSRP_var: Nbr2RSRP
+    servCellID_var: str
+    servCellRSRP_var: str
+    nbr1CellID_var: str
+    nbr1RSRP_var: str
+    nbr2CellID_var: str
+    nbr2RSRP_var: str
     
        
     #yr_mappings: Dict[int, int]
