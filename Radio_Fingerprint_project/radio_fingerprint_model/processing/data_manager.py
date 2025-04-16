@@ -51,8 +51,8 @@ def _load_raw_dataset(*, file_name: str) -> pd.DataFrame:
     return dataframe
 
 def load_dataset(*, file_name: str) -> pd.DataFrame:
-    dataframe = pd.read_csv(Path(f"{DATASET_DIR}/{file_name}"))
-    transformed = pre_pipeline_preparation(data_frame = dataframe)
+    transformed = dataframe = pd.read_csv(Path(f"{DATASET_DIR}/{file_name}"))
+    #transformed = pre_pipeline_preparation(data_frame = dataframe)
 
     return transformed
 
