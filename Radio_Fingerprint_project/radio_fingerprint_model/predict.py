@@ -31,7 +31,7 @@ def make_prediction(*, input_data: Union[pd.DataFrame, dict]) -> dict:
     results = {"predictions": None, "version": _version, "errors": errors}
       
     if not errors:
-        predictions = radio_fingerprint_pipe.predict(validated_data)
+        predictions = fingerprint_pipe.predict(validated_data)
         results = {"predictions": np.floor(predictions), "version": _version, "errors": errors}
         print(results)
 
@@ -44,8 +44,8 @@ if __name__ == "__main__":
     #data_in = {'dteday': ['2012-11-6'], 'season': ['winter'], 'hr': ['6pm'], 'holiday': ['No'], 'weekday': ['Tue'],
      #          'workingday': ['Yes'], 'weathersit': ['Clear'], 'temp': [16], 'atemp': [17.5], 'hum': [30], 'windspeed': [10]}
 
-    data_in = {'': ['2012-11-6'], 'season': ['winter'], 'hr': ['6pm'], 'holiday': ['No'], 'weekday': ['Tue'],
-               'workingday': ['Yes'], 'weathersit': ['Clear'], 'temp': [16], 'atemp': [17.5], 'hum': [30], 'windspeed': [10]}
+    data_in = {'servingCellID': ['1'], 'ServingCellRSRP': ['90'], 'Nbr1CellID': ['3'], 'Nbr1CellRSRP': ['89'], 'Nbr2CellID': ['5'],
+               'Nbr2CellRSRP': ['88']}
 
 
     make_prediction(input_data = data_in)
