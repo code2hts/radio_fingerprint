@@ -11,8 +11,8 @@ import numpy as np
 import pandas as pd
 from fastapi import APIRouter, HTTPException, Body
 from fastapi.encoders import jsonable_encoder
-from bikeshare_model import __version__ as model_version
-from bikeshare_model.predict import make_prediction
+from radio_fingerprint_model import __version__ as model_version
+from radio_fingerprint_model.predict import make_prediction
 
 from app import __version__, schemas
 from app.config import settings
@@ -36,19 +36,12 @@ def health() -> dict:
 example_input = {
     "inputs": [
         {
-            "dteday": "2012-11-05", # datetime.datetime.strptime("2012-11-05", "%Y-%m-%d"),  
-            "season": "winter", 
-            "hr": "6am",
-            "holiday": "No", 
-            "weekday": "Mon",
-            "workingday": "Yes",
-            "weathersit": "Mist",
-            "temp": 6.10,
-            "atemp": 3.0014,
-            "hum": 19.0012,	
-            "windspeed": 19.0012,
-            "yr": 2012,
-            "mnth": "November",
+            "servCellID": 1, # datetime.datetime.strptime("2012-11-05", "%Y-%m-%d"),  
+            "ServingCellRSRP": 90,
+            "Nbr1CellID": 4,
+            "Nbr1CellRSRP": 88, 
+            "Nbr2CellID": 5,
+            "Nbr2RSRP": 89,
         }
     ]
 }
