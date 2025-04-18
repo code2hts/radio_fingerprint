@@ -12,20 +12,13 @@ class PredictionResults(BaseModel):
 
 
 class DataInputSchema(BaseModel):
-    dteday: Optional[str]
-    season: Optional[str]
-    hr: Optional[str]
-    holiday: Optional[str]
-    weekday: Optional[str]
-    workingday: Optional[str]
-    weathersit: Optional[str]
-    temp: Optional[float]
-    atemp: Optional[float]
-    hum: Optional[float]
-    windspeed: Optional[float]
-    yr: Optional[int]
-    mnth: Optional[str]
-
+    servingCellID: Optional[int]
+    ServingCellRSRP: Optional[int]
+    Nbr1CellID: Optional[int]
+    Nbr1RSRP: Optional[int]
+    Nbr2CellID: Optional[int]
+    Nbr2RSRP: Optional[int]
+    
 
 class MultipleDataInputs(BaseModel):
     inputs: List[DataInputSchema]

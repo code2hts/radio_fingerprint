@@ -36,10 +36,10 @@ def health() -> dict:
 example_input = {
     "inputs": [
         {
-            "servCellID": 1, # datetime.datetime.strptime("2012-11-05", "%Y-%m-%d"),  
+            "servingCellID": 1,
             "ServingCellRSRP": 90,
             "Nbr1CellID": 4,
-            "Nbr1CellRSRP": 88, 
+            "Nbr1RSRP": 88, 
             "Nbr2CellID": 5,
             "Nbr2RSRP": 89,
         }
