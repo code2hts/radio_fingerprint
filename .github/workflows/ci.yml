@@ -92,12 +92,12 @@ jobs:
     - name: Build the Docker image for Fastapi app
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
-      run: cd bikeshare_project;docker build . -f Dockerfile -t $DOCKER_USER/bike-sharing-fastapi:latest
+      run: cd Radio_Fingerprint_project;docker build . -f Dockerfile -t $DOCKER_USER/radio-fingerprint-fastapi:latest
 
     - name: Push the Docker Image
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
-      run: docker push $DOCKER_USER/bike-sharing-fastapi
+      run: docker push $DOCKER_USER/radio-fingerprint-fastapi
 
     - name: Logout to Docker hub
       run: docker logout
