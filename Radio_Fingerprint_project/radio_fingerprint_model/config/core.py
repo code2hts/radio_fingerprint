@@ -50,15 +50,6 @@ class ModelConfig(BaseModel):
     nbr2CellID_var: str
     nbr2RSRP_var: str
     
-       
-    #yr_mappings: Dict[int, int]
-    #mnth_mappings: Dict[str, int]
-    #season_mappings: Dict[str, int]
-    #weathersit_mappings: Dict[str, int]
-    #holiday_mappings: Dict[str, int]
-    #workingday_mappings: Dict[str, int]
-    #hr_mappings: Dict[str, int]
-    
     test_size:float
     random_state: int
     n_estimators: int

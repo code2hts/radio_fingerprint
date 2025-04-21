@@ -16,67 +16,20 @@ from radio_fingerprint_model.processing.features import OutlierHandler
 
 def test_sample(sample_input_data):
     # Given
-    assert 1
-    
-# def test_weekday_variable_imputer(sample_input_data):
-#     # Given
-#     imputer = WeekdayImputer(variable = config.model_config_.weekday_var, date_var = config.model_config_.date_var)
-#     assert np.isnan(sample_input_data[0].loc[7046, 'weekday'])
-
-#     # When
-#     subject = imputer.fit(sample_input_data[0]).transform(sample_input_data[0])
-
-#     # Then
-#     assert subject.loc[7046, 'weekday'] == 'Wed'
-
-
-# def test_weathersit_variable_imputer(sample_input_data):
-#     # Given
-#     imputer = WeathersitImputer(variable = config.model_config_.weathersit_var)
-#     assert np.isnan(sample_input_data[0].loc[7046, 'weathersit'])
-
-#     # When
-#     subject = imputer.fit(sample_input_data[0]).transform(sample_input_data[0])
-
-#     # Then
-#     assert subject.loc[7046, 'weathersit'] == 'Clear'
-
-
-# def test_season_variable_mapper(sample_input_data):
-#     # Given
-#     mapper = Mapper(variable = config.model_config_.season_var, 
-#                     mappings = config.model_config_.season_mappings)
-#     assert sample_input_data[0].loc[8688, 'season'] == 'summer'
-
-#     # When
-#     subject = mapper.fit(sample_input_data[0]).transform(sample_input_data[0])
-
-#     # Then
-#     assert subject.loc[8688, 'season'] == 2
-
+    assert np.size(sample_input_data[0]) == 1548
+    assert np.size(sample_input_data[0].columns) == 6
+    #assert sample_input_data[0].columns[1] == 'servingCellRSR'
+    assert sample_input_data[0]['ServingCellRSRP'].any() < 50
 
 # def test_windspeed_variable_outlierhandler(sample_input_data):
 #     # Given
-#     encoder = OutlierHandler(variable = config.model_config_.windspeed_var)
-#     q1, q3 = np.percentile(sample_input_data[0]['windspeed'], q=[25, 75])
+#     encoder = OutlierHandler(variable = config.model_config_.servCellRSRP_var)
+#     q1, q3 = np.percentile(sample_input_data[0]['ServingCellRSRP'], q=[25, 75])
 #     iqr = q3 - q1
-#     assert sample_input_data[0].loc[5813, 'windspeed'] > q3 + (1.5 * iqr)
-
+#     #assert sample_input_data[0].loc[2] > q3 + (1.5 * iqr)
+#     assert sample_input_data[0]['ServingCellRSRP'].any() > 0
 #     # When
 #     subject = encoder.fit(sample_input_data[0]).transform(sample_input_data[0])
 
 #     # Then
-#     assert subject.loc[5813, 'windspeed'] <= q3 + (1.5 * iqr)
-
-
-# def test_weekday_variable_encoder(sample_input_data):
-#     # Given
-#     encoder = WeekdayOneHotEncoder(variable = config.model_config_.weekday_var)
-#     assert sample_input_data[0].loc[8688, 'weekday'] == 'Sun'
-
-#     # When
-#     subject = encoder.fit(sample_input_data[0]).transform(sample_input_data[0])
-
-#     # Then
-#     assert subject.loc[8688, 'weekday_Sun'] == 1.0
-
+#     assert subject.loc[1, 'ServingCellRSRP'] <= q3 + (1.5 * iqr)
